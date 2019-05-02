@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# If you want to save a jpg image, use capital letters, like so: photo.JPG
+# All .jpg files are ignored
+*.jpg
