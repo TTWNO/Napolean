@@ -1,2 +1,2 @@
-tesseract left.jpg left --lang eng &
-tesseract right.jpg right --lang eng &
+tesseract left.jpg left -l eng
+tesseract right.jpg right -l eng
