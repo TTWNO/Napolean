@@ -1,3 +1,8 @@
+STILL_OPTIONS=(-o $1)
+
+echo "Killing server!"
 kill $(ps -aux | grep StreamingCam.py | awk '/python/ {print $2}')
-raspistill -o $1
-./StreamingCam.py &
+echo "Taking picture!"
+raspistill "${STILL_OPTIONS[@]}"
+echo "Picture taken! Starting preview server."
+./StreamingCam.py &>2 &
