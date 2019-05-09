@@ -5,4 +5,4 @@ kill $(ps -aux | grep StreamingCam.py | awk '/python/ {print $2}')
 echo "Taking picture!"
 raspistill "${STILL_OPTIONS[@]}"
 echo "Picture taken! Starting preview server."
-./StreamingCam.py &> /dev/null &
+./start_stream.sh
