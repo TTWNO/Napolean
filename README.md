@@ -26,7 +26,16 @@ Everything in the JPG folder are reference images to make aure that all the soft
 ##### crop_image.sh \<filename\> \<width of book in inches\> \<height of book in inches\>
 Crops an image in the centre. Assuming the width and height of the camera to be 16.5, and 12 inches respectively—for now anyway.
 
+### Requirements
+
+Install the `imagemagick`, `bc`, `python`, and `tesseract` packages in the Arch Linux repository.
+
+Current testing on Tesseract 4.0 cannot get working with any other version.
+
+Install the `picamera` module from `pip`.
+
+### Bugs / etc...
 
 Suggetions / bugs etc.. please use the issues tab.
 
-Use pull requests to submit ideas you've coded.
+Use pull requests to submit ideas you've coded. Pull requests are welcome!
