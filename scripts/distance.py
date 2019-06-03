@@ -6,13 +6,20 @@ import time
 GPIO.setmode(GPIO.BCM)
  
 #set GPIO Pins
-GPIO_TRIGGER = 4
-GPIO_ECHO = 5
+GPIO_TRIGGER = 23
+GPIO_ECHO = 24
  
 #set GPIO direction (IN / OUT)
 GPIO.setup(GPIO_TRIGGER, GPIO.OUT)
 GPIO.setup(GPIO_ECHO, GPIO.IN)
- 
+
+#set GPIO trigger to off by default just to be sure
+GPIO.output(GPIO_TRIGGER, False)
+print("Allowing sensor to settle")
+#sleep to let the sensor settle)
+time.sleep(2)
+print("Sensor settled")
+
 def distance():
     # set Trigger to HIGH
     GPIO.output(GPIO_TRIGGER, True)
@@ -21,16 +28,18 @@ def distance():
     time.sleep(0.00001)
     GPIO.output(GPIO_TRIGGER, False)
  
-    StartTime = time.time()
-    StopTime = time.time()
+#    StartTime = time.time()
+#    StopTime = time.time()
  
     # save StartTime
     while GPIO.input(GPIO_ECHO) == 0:
-        StartTime = time.time()
+        pass
+    StartTime = time.time()
  
     # save time of arrival
     while GPIO.input(GPIO_ECHO) == 1:
-        StopTime = time.time()
+        pass
+    StopTime = time.time()
  
     # time difference between start and arrival
     TimeElapsed = StopTime - StartTime
@@ -44,7 +53,7 @@ if __name__ == '__main__':
     try:
         while True:
             dist = distance()
-            print ("Measured Distance = %.1f cm" % dist)
+            print ("Measured Distance = {:1f} cm / {:1f} in".format(dist, (dist * 0.3937)))
             time.sleep(1)
  
         # Reset by pressing CTRL + C
