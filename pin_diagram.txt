@@ -1,0 +1,24 @@
+EDGE OF BOARD
+V = Vcc / 5V
+G = GND / Ground
+T = TRIGG / Trigger / 3.3v
+E = ECHO / 3.3v (comes in at 2.5v due to 2.2k ohm resister being used instead of 2k right now)
+-------
+|  |V1|
+-------
+|  |V2|
+-------
+|  |G1|
+-------
+|T2|  |
+-------
+|E2|  |
+-------
+|G2|  |
+-------
+|  |T1|
+-------
+|  |E1|
+-------
+...
+USB/ETHERNET

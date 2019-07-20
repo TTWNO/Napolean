@@ -1,5 +1,5 @@
-W=$(convert $1 -print "%w" /dev/null)
-H=$(convert $1 -print "%h" /dev/null)
+W=$(get_image_width $1)
+H=$(get_image_height $1)
 # Half width
 HW=$(($W / 2))
 OPTIONS=(-colorspace gray -fill white -sharpen 0x2)
